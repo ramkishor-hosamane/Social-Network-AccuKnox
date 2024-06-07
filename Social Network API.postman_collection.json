@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "2088d73d-97be-40f2-b64c-750525e4a667",
+		"name": "Social Network API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"name\":\"Test\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": "http://localhost:8000/api/signup/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@example.com\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": "http://localhost:8000/api/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 84c8504011774af429acf0e397c01646cf91955b",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/search/?query=a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 84c8504011774af429acf0e397c01646cf91955b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to_user_id\": \"2\"\n}"
+				},
+				"url": "http://localhost:8000/api/friend-request/"
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 84c8504011774af429acf0e397c01646cf91955b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"accept\"\n}"
+				},
+				"url": "http://localhost:8000/api/friend-request/1/update/"
+			},
+			"response": []
+		},
+		{
+			"name": "List Friend Requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 84c8504011774af429acf0e397c01646cf91955b",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/friend-requests"
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 84c8504011774af429acf0e397c01646cf91955b",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/friends"
+			},
+			"response": []
+		},
+		{
+			"name": "User Signup 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"newuser@example.com\",\n    \"name\":\"New\",\n    \"password\": \"newpassword\"\n}"
+				},
+				"url": "http://localhost:8000/api/signup/"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"newuser@example.com\",\n    \"password\": \"newpassword\"\n}"
+				},
+				"url": "http://localhost:8000/api/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 553ce242bbad48e0eddd41715aab1f9cc720c839",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to_user_id\": \"1\"\n}"
+				},
+				"url": "http://localhost:8000/api/friend-request/"
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Request 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 553ce242bbad48e0eddd41715aab1f9cc720c839",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"accept\"\n}"
+				},
+				"url": "http://localhost:8000/api/friend-request/1update/"
+			},
+			"response": []
+		},
+		{
+			"name": "List Friend Requests 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 553ce242bbad48e0eddd41715aab1f9cc720c839",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/friend-requests/"
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 553ce242bbad48e0eddd41715aab1f9cc720c839",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/friends/"
+			},
+			"response": []
+		}
+	]
+}
